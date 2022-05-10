@@ -6,9 +6,17 @@
                 http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- Here we instance of ServiceB class using <bean> tag -->
-    <bean id="agendaService" class="dev.friday.bitwayagenda.service.impl.AgendaService"/>
+    <bean id="agendaService" class="dev.friday.bitwayagenda.service.impl.ColaboradorService"/>
     <!-- Here, ClientA receives ServiceB injection -->
     <bean id="agendaControllerBean" class="dev.friday.bitwayagenda.controller.impl.AgendaController">
         <constructor-arg ref="agendaService" />
     </bean>
+
+    <!-- REPOSITORY -->
+    <bean id="repository" class="dev.friday.bitwayagenda.repository.impl.AgendaRepository"/>
+
+    <bean id = "colaboradorService" class = "dev.friday.bitwayagenda.service.impl.ColaboradorService">
+        <constructor-arg ref="repository" />
+    </bean>
+
 </beans>

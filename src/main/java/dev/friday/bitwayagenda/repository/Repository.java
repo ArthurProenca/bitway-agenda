@@ -1,10 +1,8 @@
-package dev.friday.bitwayagenda.service;
+package dev.friday.bitwayagenda.repository;
 
 import dev.friday.bitwayagenda.entity.dto.ColaboradorDTO;
-import dev.friday.bitwayagenda.repository.Repository;
 import org.springframework.http.ResponseEntity;
 
-public interface Service {
-
+public interface Repository{
     ResponseEntity<?> insertColaborador(ColaboradorDTO colaboradorDTO);
 }
