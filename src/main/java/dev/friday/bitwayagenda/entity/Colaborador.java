@@ -2,11 +2,12 @@ package dev.friday.bitwayagenda.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Colaborador", schema = "bitagenda")
+@Table(name = "Colaborador")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Colaborador implements java.io.Serializable {
@@ -20,7 +21,6 @@ public class Colaborador implements java.io.Serializable {
     @Basic
     @Column(name = "nomeSlack")
     private String nomeSlack;
-    @Basic
     @Column(name = "agenda")
     private Integer agenda;
 

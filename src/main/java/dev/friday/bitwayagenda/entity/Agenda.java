@@ -3,7 +3,7 @@ package dev.friday.bitwayagenda.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Agenda", schema = "bitagenda")
+@Table(name = "Agenda")
 
 public class Agenda {
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -6,6 +6,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -37,6 +38,7 @@ public class AgendaController implements dev.friday.bitwayagenda.controller.Agen
     }
 
     @PostMapping("/colaborador/insert")
+    @Transactional
     public ResponseEntity<?> insertColaborador(@RequestBody ColaboradorDTO colaboradorDTO) {
         return service.insertColaborador(colaboradorDTO);
     }
