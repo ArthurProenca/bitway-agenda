@@ -1,14 +1,19 @@
 package dev.friday.bitwayagenda.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "Colaborador", schema = "bitagenda")
-public class Colaborador {
+@AllArgsConstructor
+@NoArgsConstructor
+public class Colaborador implements java.io.Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
-    private int id;
+    private Integer id;
     @Basic
     @Column(name = "nome")
     private String nome;
@@ -19,11 +24,11 @@ public class Colaborador {
     @Column(name = "agenda")
     private Integer agenda;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -51,27 +56,4 @@ public class Colaborador {
         this.agenda = agenda;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Colaborador that = (Colaborador) o;
-
-        if (id != that.id) return false;
-        if (nome != null ? !nome.equals(that.nome) : that.nome != null) return false;
-        if (nomeSlack != null ? !nomeSlack.equals(that.nomeSlack) : that.nomeSlack != null) return false;
-        if (agenda != null ? !agenda.equals(that.agenda) : that.agenda != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + (nome != null ? nome.hashCode() : 0);
-        result = 31 * result + (nomeSlack != null ? nomeSlack.hashCode() : 0);
-        result = 31 * result + (agenda != null ? agenda.hashCode() : 0);
-        return result;
-    }
 }

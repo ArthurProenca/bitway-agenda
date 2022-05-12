@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
-@ImportResource("classpath:/*.xml")
+@ImportResource("classpath:/META-INF/applicationContext.xml")
 public class BitwayAgendaApplication {
 
 	public static void main(String[] args) {
